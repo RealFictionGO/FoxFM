@@ -1,6 +1,6 @@
 from os import listdir
 import json
-from ui.ui_components import Window_Component
+from ui.window_component import Window_Component
 
 
 if "foxfm_config.json" not in listdir():
