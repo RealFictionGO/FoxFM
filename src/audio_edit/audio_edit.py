@@ -27,4 +27,3 @@ def join_all_audio(audio_files_names:list, output_name:str) -> None:
         output_name = new_output_name
         print("\n---- NEW NAME -----\n")
     """
-    full_audio.write_audiofile(output_name)

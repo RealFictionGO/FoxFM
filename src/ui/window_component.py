@@ -8,12 +8,5 @@ class Window_Component:
         self.root = ct.CTk()
         self.root.geometry("800x500")
 
-        self.component_list = []
-
-    def pack_components(self):
-        for component in self.component_list:
-            component.pack()
-
     def start(self) -> None:
-        self.pack_components()
         self.root.mainloop()

@@ -1,20 +1,9 @@
-from os import listdir
-import json
-from ui.window_component import Window_Component
+from load_config import get_window
+from ui.ui_components import Audio_Tile
+import customtkinter as ct
 
+root = get_window()
+loading_label = ct.CTkLabel(master=root.root, width=200, height=400, text="Load audio files", fg_color="#FFFFFF")
+loading_label.place(x = 10, y = 50)
 
-if "foxfm_config.json" not in listdir():
-    with open("foxfm_config.json", 'w') as f:
-        config_pattern = {
-            "appearance" : "System",
-            "color_theme" : "blue"
-        }
-
-        f.write(json.dumps(config_pattern, indent=2))
-
-f = open("foxfm_config.json", 'r')
-config_file = json.loads(f.read())
-window = Window_Component(config_file.get("appearance"), config_file.get("color_theme"))
-f.close()
-
-window.start()
+root.start()
