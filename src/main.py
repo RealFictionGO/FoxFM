@@ -1,9 +1,13 @@
 from load_config import get_window
-from ui.ui_components import Audio_Tile
+from ui.ui_components import *
 import customtkinter as ct
 
-root = get_window()
-loading_label = ct.CTkLabel(master=root.root, width=200, height=400, text="Load audio files", fg_color="#FFFFFF")
-loading_label.place(x = 10, y = 50)
+root, color_sheet = get_window(True)
+
+ll = LoadingLabel(root.root, 15, 15, 200, 400, False)
+ll.set_widgets()
+
+file_open_button = FileOpenButton(root.root, 15, 425, 200, 50, ll)
+file_open_button.set_widgets()
 
 root.start()
